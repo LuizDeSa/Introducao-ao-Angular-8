@@ -1,11 +1,17 @@
-{{title}}
+<div class="container">
+  {{title}}
 
-<br>
+  <br>
 
-{{name}}
+  {{name}}
 
-<br>
+  <br>
 
-<input [ngModel]="name" name="name"> <!-- one-way data binding-->
+  <input [ngModel]="name" name="name"> <!-- one-way data binding-->
 
-<input [(ngModel)]="name" name="name"><!-- two-way data binding-->
+  <input [(ngModel)]="name" name="name"><!-- two-way data binding-->
+
+  <br><br><br>
+
+  <app-course-list> </app-course-list>
+</div>
