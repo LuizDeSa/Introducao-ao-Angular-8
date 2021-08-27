@@ -28,9 +28,9 @@
       <td><img [src]="course.imageUrl" width="40px" alt=""></td> <!-- quando queremos mesclar uma caracteristica de uma tag html com o angular, temos que colocar o atributo entre colchetes-->
       <td>{{course.name}}</td>
       <td>{{course.price}}</td>
-      <td>{{course.code}}</td>
+      <td>{{course.code | lowercase | repleace: '-':' '}}</td>
       <td>{{course.duration}}</td>
-      <td>{{course.releaseDate}}</td>
+      <td>{{course.releaseDate | date: 'dd/MM/yyyy'}}</td> <!-- pipe é utilizado para alterar a forma de exibição de um dado recurso-->
       <td>
         <app-star [rating] = "course.rating"></app-star>
       </td>
