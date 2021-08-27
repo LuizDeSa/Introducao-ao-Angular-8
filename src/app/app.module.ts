@@ -1,3 +1,4 @@
+import { StarComponent } from './star/star.component';
 import { CourseListComponent } from './courses/course-list.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,7 +9,8 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [//onde eu declaro os modulos que estão na aplicação
     AppComponent,
-    CourseListComponent
+    CourseListComponent,
+    StarComponent
   ],
   imports: [ // onde de fato nos importamos os nosso modulos externos e internos
     BrowserModule,
