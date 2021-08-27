@@ -32,7 +32,7 @@
       <td>{{course.duration}}</td>
       <td>{{course.releaseDate | date: 'dd/MM/yyyy'}}</td> <!-- pipe é utilizado para alterar a forma de exibição de um dado recurso-->
       <td>
-        <app-star [rating] = "course.rating"></app-star>
+        <app-star [rating] = "course.rating"></app-star> <!-- aqi faz sentido utilizarmos rotas, pois ele pode ser utilizado em outros lugares-->
       </td>
       <td></td>
     </tr>

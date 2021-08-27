@@ -1,3 +1,4 @@
-<div class="container">
-  <app-course-list> </app-course-list>
+<app-nav-bar></app-nav-bar>
+<div class="container mt-4"><!-- é necessario avisar para o angular onde ele vai realizar a troca de contexto. no caso dessa aplicação será nessa classe-->
+  <router-outlet></router-outlet> <!-- aqui é o ponto de troca de contexto de rotas-->
 </div>
