@@ -15,16 +15,23 @@ export class CourseInfoComponent implements OnInit{
   //aqui ele reliza a injeção de depêndencia
   constructor(private activatedRoute: ActivatedRoute, private courseService: CourseService){}
 
-  ngOnInit(): void {
+  ngOnInit(): void {//temos que adicionar um if no template para garantir que o formulario só sera exibido se todas as informações tiverem sido carregadas pois o angular é assincrono
 
     // this.courseId = +this.activatedRoute.snapshot.paramMap.get('id')!;
 
-    this.course = this.courseService.retrievelById(+(this.activatedRoute.snapshot.paramMap.get('id')||'-1'));
+    // this.course = this.courseService.retrievelById(+(this.activatedRoute.snapshot.paramMap.get('id')||'-1'));
 
+    this.courseService.retrievelById(+this.activatedRoute.snapshot.paramMap.get('id')!).subscribe({
+      next: course =>this.course = course,
+      error: err => console.log('Error: ', err)
+    });
   }
 
   save(): void{
-    this.courseService.save(this.course);
+    this.courseService.save(this.course).subscribe({
+      next: course => this.course = course,
+      error: err => console.log('Error: ', err)
+    });
   }
 
 }

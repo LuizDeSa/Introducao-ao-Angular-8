@@ -1,4 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { Course } from "./course";
 
 @Injectable({ // torna essa classe elegivel para injeção de depêndencia
@@ -7,18 +9,30 @@ import { Course } from "./course";
 export class CourseService{//NÃO É INTERESSANTE COLOCAR NAS CLASSES DE SERVIÇOS variaveis que serão modificadas na propria classe de serviço
                           //Assim é interessante que tenhamos apenas métodos que executam algumas funções ou chamen outro método e no maximo, variaveis estaticas. Pois assim, não teremos que ficar criando muitos objetos dentro da mémoria do computador.
 
-  retrievelAll(): Course[]{
-    return COURSES;
+
+
+  constructor(private httpClient:HttpClient){} // realizando a injestão de depêndecia na nossa classe
+
+  private coursesUrl: string = 'http://localhost:3100/api/courses';
+
+  retrievelAll(): Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.coursesUrl);
   }
 
-  retrievelById(id: number): Course{
-    return (COURSES.find((courseIterator: Course)=> courseIterator.id===id))!;
+  retrievelById(id: number): Observable<Course>{
+    //return (COURSES.find((courseIterator: Course)=> courseIterator.id===id))!;
+    return this.httpClient.get<Course>(`${this.coursesUrl}/${id}`);
   }
 
-  save(course: Course): void{
+  save(course: Course): Observable<Course>{
     if(course.id){
-      const index = COURSES.findIndex((courseIterator: Course) => courseIterator.id===course.id);
-      COURSES[index] = course;
+      // const index = COURSES.findIndex((courseIterator: Course) => courseIterator.id===course.id);
+      // COURSES[index] = course;
+
+      return this.httpClient.put<Course>(`${this.coursesUrl}/${course.id}`, course);
+
+    }else{
+      return this.httpClient.post<Course>(`${this.coursesUrl}`, course);
     }
   }
 

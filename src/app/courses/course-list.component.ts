@@ -19,8 +19,18 @@ export class CourseListComponent implements OnInit{ //deizando esta classe publi
   constructor(private couseService: CourseService){ } //dessa forma o angular vai realizar a injeção de dependencia.
 
   ngOnInit():void{
-    this._courses = this.couseService.retrievelAll();
-    this.filteredCourses = this._courses;
+    this.retriveAll();
+  }
+
+  retriveAll(){
+    this.couseService.retrievelAll().subscribe({
+      next: courses => {
+        this._courses = courses;
+        this.filteredCourses = this._courses;
+      },
+      error: err => console.log('Error: ', err)
+
+    });
   }
 
 
