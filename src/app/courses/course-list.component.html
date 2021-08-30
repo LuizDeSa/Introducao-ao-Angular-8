@@ -34,7 +34,9 @@
       <td>
         <app-star [rating] = "course.rating"></app-star> <!-- aqi faz sentido utilizarmos rotas, pois ele pode ser utilizado em outros lugares-->
       </td>
-      <td></td>
+      <td>                 <!--caminho--><!--path variable-->
+        <a [routerLink] = "['/courses/info', course.id]" class="btn btn-primary">Edit</a>
+      </td>
     </tr>
   </tbody>
 </table>
