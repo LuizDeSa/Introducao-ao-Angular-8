@@ -33,6 +33,18 @@ export class CourseListComponent implements OnInit{ //deizando esta classe publi
     });
   }
 
+  deleteById(courseId: number): void{
+    // console.log('course-list-componente::: courseId')
+    this.couseService.deleteById(courseId).subscribe({
+      next: ()=>{
+        console.log('Delete with success ', courseId);
+        this.retriveAll();
+        location.reload();
+      },
+      error: err => console.log('Error: ', err)
+    });
+  }
+
 
   set filter(value: string){
     this._filterBy = value;
