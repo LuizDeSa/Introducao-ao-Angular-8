@@ -1,0 +1,1 @@
+Nesta pasta serão armazenados os componentes e os pipes pequenos e genéricos que podem ser utilizados em varios locais

@@ -1,17 +1,15 @@
 import { CourseModule } from './courses/course.module';
 import { Erro404Component } from './erro-404/erro-404.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { StarComponent } from './star/star.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [//onde eu declaro os componentes que estão na aplicação
+  declarations: [//onde eu declaro os componentes e os pipes que estão na aplicação
     AppComponent,
     NavBarComponent,
     Erro404Component
