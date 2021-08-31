@@ -1,0 +1,1 @@
+Esta pasta contém os componentes mais pesados, que contém uma amarração maior com outros componentes, que contém regra de negocios mais avançadas que não são tão genéricos.
