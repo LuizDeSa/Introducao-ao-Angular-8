@@ -1,6 +1,5 @@
 import { CoreModule } from './core/component/core.module';
 import { CourseModule } from './courses/course.module';
-import { Erro404Component } from './erro-404/erro-404.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,8 +9,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [//onde eu declaro os componentes e os pipes que estão na aplicação
-    AppComponent,
-    Erro404Component
+    AppComponent
   ],
   imports: [ // onde de fato nos importamos os nosso modulos externos e internos
     BrowserModule,
@@ -21,9 +19,6 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {
         path: '', redirectTo:'courses', pathMatch: 'full' // rota padrão do angular
-      },
-      {
-        path: '**', component: Erro404Component//quando não encontra a rota // rota padrão do angular
       }
     ])
   ],
