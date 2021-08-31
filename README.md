@@ -1,5 +1,36 @@
 # CourseManager
 
+Este projeto foi desenvolvido durante o bootcamp desenvolvido pela DIO (Digital Innovation One) e representa o front-end de uma aplicação de cursos.
+
+### Conteúdos abordados
+
+* Conceitos de Módulos
+* Conceitos de Componentes
+* Conceitos de Pipes
+* Conceitos de Rotas
+* Conceitos de Injeção de dependência
+* Conceitos dos principais decorators: @NgModule, @Component, @Pipe ...
+
+
+
+## Alguns do Desenvolvimento
+
+### Views
+
+Nesta aplicação, foram desenvolvidas duas views: uma para exibir, em uma tabela, todos os cursos presentes no banco de dados e outra para edição das informações de cada curso.
+
+
+
+### Styles
+
+Para os estilos das paginas foram utilizados o bootstrap e font-awesome (para gerar as estrelas do rating de cada curso) 
+
+
+
+
+
+# README padrão do Angular
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
 ## Development server
